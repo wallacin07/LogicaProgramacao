@@ -8,8 +8,8 @@
       "args": [],
       "stopAtEntry": false,
       "externalConsole": true,
-      "cwd": "c:/Users/Aluno/Desktop/LogicaProgramacao/Aula02",
-      "program": "c:/Users/Aluno/Desktop/LogicaProgramacao/Aula02/build/Debug/outDebug",
+      "cwd": "c:/Users/Aluno/Desktop/LogicaProgramacao/Aula03",
+      "program": "c:/Users/Aluno/Desktop/LogicaProgramacao/Aula03/build/Debug/outDebug",
       "MIMode": "gdb",
       "miDebuggerPath": "gdb",
       "setupCommands": [
