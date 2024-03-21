@@ -2,9 +2,9 @@
 #include <windows.h>
 
 int main(){
- int num, i, resultado = 0,j;
- printf("Digite um número para saber se eh primo: ");
- scanf("%d", &num);
+ int num = 100, i, resultado = 0,j;
+//  printf("Digite um número para saber se eh primo: ");
+//  scanf("%d", &num);
  for (i=1;i<=num;i++){
    resultado = 0;
    for (j = 2; j <= i / 2; j++) {
