@@ -1,47 +1,67 @@
 #include <stdio.h>
-#ifndef banco_h
-#define banco_h
+#ifndef BANCO_H
+#define BANCO_H
+
+int abrirconta(int saldo){
+    FILE *f;
+    char url[] = "extrato.txt";
+
+    printf("Voce acabou de abrir a conta, o saldo atual é: %i" ,saldo);
+
+    f  = fopen(url,"w");
+    fprintf(f,"Voce acabou de abrir a conta, o saldo atual é: %i" ,saldo);
+    fclose(f);
+    return 0;
+}
 
 
-int banco(){
-int saldo = 0,saque,deposito, opcao, sair = 0;
-printf("Voce acabou de abrir a conta, o que deseja fazer");
-Inicio:
-while (sair != 1)
+
+int depositar(int saldo)
 {
-    
+    FILE *f;
+    char url[] = "extrato.txt";
+    int deposito = 0;
 
+    printf("\nDigite o quanto deseja depositar\n");
+    scanf("%i", &deposito);
 
-printf("Digite o que deseja fazer\n1 - depositar\n2 - sacar\n");
-scanf("%i", &opcao);
-if (opcao == 1)
+    saldo = saldo + deposito;
+    printf("\nDeposito recebido no valor de R$%i" ,deposito);
+
+    f  = fopen(url,"w");
+    fprintf(f,"\nDeposito recebido no valor de R$%i\nSeu saldo atual é: %i" ,deposito, saldo);
+    fclose(f);
+
+    return saldo;
+}
+
+int sacar(int saldo)
 {
-printf("\nDigite o quanto deseja depositar\n");
-scanf("%i", &deposito);
-saldo = saldo + deposito;
-}
-else if (opcao == 2)
-{
-printf("Digite o quanto deseja sacar\n");
-scanf("%i", &saque);
-while(saldo < 60)
-{
-    printf("\nVoce nao pode sacar");
-    goto Inicio;
-}
-saldo =  saldo - saque;
-}
- else
- printf("\nOpcao invalida");
+    FILE *f;
+    char url[] = "extrato.txt";
+    int saque;
+    printf("\nDigite o quanto deseja sacar\n");
+    scanf("%i", &saque);
 
-printf("\nDeseja sair do sistema?\nSe sim, digite 1\nSe nao, digite qualquer outro numero\n") ;
-scanf("%i", &sair);
-}
+    if(saldo < saque)
+    {
+        printf("\nVoce nao pode sacar");
+    }
 
+        saldo -=saque;
+        printf("\nSaque feito no valor de R$%i" ,saque);
+        f  = fopen(url,"w");
+        fprintf(f,"\nSaque feito no valor de R$%i\nSaldo atual: %i ",saque, saldo);
+        fclose(f);
+        return saldo;
 }
 
 
-
+ int versaldo(int saldo)
+ {
+    printf("Seu saldo atual é: %d\n", saldo);
+    return saldo;
+ }
 
 
 #endif
