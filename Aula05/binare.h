@@ -1,10 +1,10 @@
 #include <stdio.h>
 #ifndef binare_h
 #define binare_h
-int calculadora_logica()
+int iniciar_calculadora()
 {
     int a,b,escolha;
-    printf("Digite qual calculo logico voce quer fazer\n1 - NOT\n2 - AND\n3 - OR\n4 - XOR\n5 - NAND\n6 - NOR\n7 - XNOR");
+    printf("Digite qual calculo logico voce quer fazer\n1 - NOT\n2 - AND\n3 - OR\n4 - XOR\n5 - NAND\n6 - NOR\n7 - XNOR\n--");
     scanf("%i", &escolha);
     switch (escolha)
     {
@@ -44,8 +44,8 @@ int calculadora_logica()
             scanf("%i", &a);
             printf("digite o valor do segundo numero: ");
             scanf("%i", &b);
-            int and_ab = a&b;
-            int not_and_ab = ~and_ab;
+            int and__ab = a&b;
+            int not_and_ab = ~and__ab;
             printf("And: %i", not_and_ab);
             break;
         case 6:
@@ -53,16 +53,16 @@ int calculadora_logica()
             scanf("%i", &a);
             printf("digite o valor do segundo numero: ");
             scanf("%i", &b);
-            int or_ab = a|b;
-            int not_or_ab = ~or_ab;
+            int or__ab = a|b;
+            int not_or_ab = ~or__ab;
             printf("%i", not_or_ab);
         case 7:
             printf("digite o valor do primeiro numero: ");
             scanf("%i", &a);
             printf("digite o valor do segundo numero: ");
             scanf("%i", &b);
-            int xor_ab = a^b;
-            int not_xor_ab = ~xor_ab;
+            int xor__ab = a^b;
+            int not_xor_ab = ~xor__ab;
             printf("%i", not_xor_ab);
     default:
         break;
